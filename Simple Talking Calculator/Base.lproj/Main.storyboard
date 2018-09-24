@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="KGWhattheTeacherWants.ttf">
+            <string>KGWhattheTeacherWants</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Simple_Talking_Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vom-M5-Qm9" userLabel="Display View">
+                                <rect key="frame" x="0.0" y="20" width="375" height="162"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello :)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfp-bF-fQz" userLabel="Display Label">
+                                        <rect key="frame" x="16" y="12" width="343" height="138"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="pfp-bF-fQz" firstAttribute="top" secondItem="Vom-M5-Qm9" secondAttribute="top" constant="12" id="4rO-DU-alQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="pfp-bF-fQz" secondAttribute="bottom" constant="12" id="Et0-E1-T0s"/>
+                                    <constraint firstAttribute="trailing" secondItem="pfp-bF-fQz" secondAttribute="trailing" constant="16" id="dlN-tU-W6A"/>
+                                    <constraint firstItem="pfp-bF-fQz" firstAttribute="leading" secondItem="Vom-M5-Qm9" secondAttribute="leading" constant="16" id="e57-ei-Nxh"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="8qV-zI-Mf7" userLabel="Buttons Stack">
+                                <rect key="frame" x="0.0" y="182" width="375" height="485"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="18i-e8-gLO" userLabel="Row 1">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjc-kX-w0o" userLabel="color">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="94"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="C" image="icon-colors"/>
+                                                <connections>
+                                                    <action selector="pressedColorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zUb-ZP-ewt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ee-DY-qvN" userLabel="voice">
+                                                <rect key="frame" x="95" y="0.0" width="90.5" height="94"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="skin" image="icon-speech"/>
+                                                <connections>
+                                                    <action selector="pressedVoiceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sV5-sf-WxT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cn6-HX-4Ja" userLabel="clear">
+                                                <rect key="frame" x="189.5" y="0.0" width="91" height="94"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="C">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="clearButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5g3-bX-TtM"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Fm-NY-2bO">
+                                                <rect key="frame" x="284.5" y="0.0" width="90.5" height="94"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="divided by"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <color key="tintColor" red="1" green="0.9654258120298157" blue="0.99812722201840698" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="÷">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressedOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ta0-mn-akT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="sa2-by-fbj" userLabel="Row2">
+                                        <rect key="frame" x="0.0" y="98" width="375" height="93.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gNf-2f-Ni1">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="93.5"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="7">
+                                                    <color key="titleColor" red="0.0" green="0.47667570861097897" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gRw-bU-fdN"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ax-op-jYx">
+                                                <rect key="frame" x="95" y="0.0" width="90.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="8">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BDk-q8-7EC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mh-2r-BJ5">
+                                                <rect key="frame" x="189.5" y="0.0" width="91" height="93.5"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="9">
+                                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QJ5-hd-9yr"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NLk-nh-VZI">
+                                                <rect key="frame" x="284.5" y="0.0" width="90.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="times"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="x"/>
+                                                <connections>
+                                                    <action selector="pressedOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NDc-08-Kq4"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="3rd-6G-NiQ" userLabel="Row3">
+                                        <rect key="frame" x="0.0" y="195.5" width="375" height="94"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yhB-KV-1zc">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="94"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="4"/>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e8D-by-rpv"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwR-uc-J6R">
+                                                <rect key="frame" x="95" y="0.0" width="90.5" height="94"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="5"/>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hFY-F2-zDh"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHN-RW-ZWS">
+                                                <rect key="frame" x="189.5" y="0.0" width="91" height="94"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="6"/>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zVN-3J-4kC"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nUI-k8-TRc">
+                                                <rect key="frame" x="284.5" y="0.0" width="90.5" height="94"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="minus"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="-"/>
+                                                <connections>
+                                                    <action selector="pressedOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TCa-zM-ia1"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="nPl-Rr-EId" userLabel="Row 4">
+                                        <rect key="frame" x="0.0" y="293.5" width="375" height="93.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="36D-9Z-Uv8">
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="93.5"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="1"/>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="phi-5H-rFd"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sly-jx-6Za" userLabel="2">
+                                                <rect key="frame" x="95" y="0.0" width="90.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="2"/>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IvZ-Dw-Ke6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kE3-gU-44c">
+                                                <rect key="frame" x="189.5" y="0.0" width="91" height="93.5"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="3"/>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8q5-C7-vuY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wRH-M9-7bq">
+                                                <rect key="frame" x="284.5" y="0.0" width="90.5" height="93.5"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="plus"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="+"/>
+                                                <connections>
+                                                    <action selector="pressedOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NmF-xz-O6U"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="kNU-HD-Lh0" userLabel="Row 5">
+                                        <rect key="frame" x="0.0" y="391" width="375" height="94"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wub-Ti-sU7">
+                                                <rect key="frame" x="0.0" y="0.0" width="185.5" height="94"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="0"/>
+                                                <connections>
+                                                    <action selector="pressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8CD-55-6UP"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPE-dY-IaO">
+                                                <rect key="frame" x="189.5" y="0.0" width="90.5" height="94"/>
+                                                <color key="backgroundColor" red="0.72549019607843135" green="0.94117647058823528" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="."/>
+                                                <connections>
+                                                    <action selector="pointButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TiT-tg-bD5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9s-DF-R47">
+                                                <rect key="frame" x="284" y="0.0" width="91" height="94"/>
+                                                <color key="backgroundColor" red="0.66666666666666663" green="0.88235294117647056" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <accessibility key="accessibilityConfiguration" label="equals"/>
+                                                <fontDescription key="fontDescription" name="KGWhattheTeacherWants" family="KG What the Teacher Wants" pointSize="72"/>
+                                                <state key="normal" title="="/>
+                                                <connections>
+                                                    <action selector="pressedOperatorButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a6Q-vZ-gsR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="IPE-dY-IaO" firstAttribute="width" secondItem="wub-Ti-sU7" secondAttribute="width" multiplier="0.49" id="abr-2l-pvM"/>
+                                            <constraint firstItem="K9s-DF-R47" firstAttribute="width" secondItem="IPE-dY-IaO" secondAttribute="width" id="v9S-wD-iyS"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Vom-M5-Qm9" firstAttribute="height" secondItem="6Tk-OE-BBY" secondAttribute="height" multiplier="0.25" id="Crd-cM-cWt"/>
+                            <constraint firstItem="Vom-M5-Qm9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Ppd-rP-9PL"/>
+                            <constraint firstItem="Vom-M5-Qm9" firstAttribute="width" secondItem="6Tk-OE-BBY" secondAttribute="width" id="fNX-Fk-hbd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8qV-zI-Mf7" secondAttribute="trailing" id="hYi-In-Dck"/>
+                            <constraint firstItem="8qV-zI-Mf7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="nHk-9m-Uqt"/>
+                            <constraint firstItem="8qV-zI-Mf7" firstAttribute="top" secondItem="Vom-M5-Qm9" secondAttribute="bottom" id="rqB-iE-TiH"/>
+                            <constraint firstItem="8qV-zI-Mf7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wZU-sJ-x5F"/>
+                            <constraint firstItem="Vom-M5-Qm9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wfQ-3B-t7K"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="displayLabel" destination="pfp-bF-fQz" id="lyg-a1-2V5"/>
+                        <outletCollection property="allNumberButons" destination="6ax-op-jYx" collectionClass="NSMutableArray" id="BR2-Gu-osH"/>
+                        <outletCollection property="allNumberButons" destination="gNf-2f-Ni1" collectionClass="NSMutableArray" id="JU6-PK-v6w"/>
+                        <outletCollection property="allNumberButons" destination="yhB-KV-1zc" collectionClass="NSMutableArray" id="V3Y-2g-MBR"/>
+                        <outletCollection property="allNumberButons" destination="vwR-uc-J6R" collectionClass="NSMutableArray" id="iuH-Nc-dr7"/>
+                        <outletCollection property="allNumberButons" destination="DHN-RW-ZWS" collectionClass="NSMutableArray" id="WCr-pB-aja"/>
+                        <outletCollection property="allNumberButons" destination="36D-9Z-Uv8" collectionClass="NSMutableArray" id="eUk-DY-A8q"/>
+                        <outletCollection property="allNumberButons" destination="sly-jx-6Za" collectionClass="NSMutableArray" id="sxg-eH-050"/>
+                        <outletCollection property="allNumberButons" destination="kE3-gU-44c" collectionClass="NSMutableArray" id="YUI-sd-LFu"/>
+                        <outletCollection property="allNumberButons" destination="wub-Ti-sU7" collectionClass="NSMutableArray" id="yXn-5O-bPu"/>
+                        <outletCollection property="allOperationButons" destination="Sjc-kX-w0o" collectionClass="NSMutableArray" id="bzB-Dh-D8F"/>
+                        <outletCollection property="allOperationButons" destination="3Ee-DY-qvN" collectionClass="NSMutableArray" id="2rV-ZT-4Rc"/>
+                        <outletCollection property="allOperationButons" destination="cn6-HX-4Ja" collectionClass="NSMutableArray" id="gHw-gL-xJk"/>
+                        <outletCollection property="allOperationButons" destination="0Fm-NY-2bO" collectionClass="NSMutableArray" id="ee9-73-Glk"/>
+                        <outletCollection property="allOperationButons" destination="NLk-nh-VZI" collectionClass="NSMutableArray" id="wbf-VK-J64"/>
+                        <outletCollection property="allOperationButons" destination="nUI-k8-TRc" collectionClass="NSMutableArray" id="sZX-Fs-bjw"/>
+                        <outletCollection property="allOperationButons" destination="wRH-M9-7bq" collectionClass="NSMutableArray" id="vo8-sW-Nf5"/>
+                        <outletCollection property="allOperationButons" destination="K9s-DF-R47" collectionClass="NSMutableArray" id="ZBu-6w-Rgn"/>
+                        <outletCollection property="allNumberButons" destination="IPE-dY-IaO" collectionClass="NSMutableArray" id="GID-XJ-heV"/>
+                        <outletCollection property="allNumberButons" destination="9Mh-2r-BJ5" collectionClass="NSMutableArray" id="wH5-mS-sA2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.39130434782609" y="118.20652173913044"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon-colors" width="256" height="256"/>
+        <image name="icon-speech" width="256" height="256"/>
+    </resources>
+</document>
