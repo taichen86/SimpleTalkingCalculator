@@ -14,11 +14,9 @@ class ViewController: UIViewController , CalculatorDelegate
 
     func updateInputNumber(input: String)
     {
-    //    print("update input number --> \(input)")
         var size = 74
         if( input.count > 6 )
         {
-        //    print("smaller size " + String(input.count))
             size = 50
             if( input.count > 9 )
             {
@@ -31,14 +29,10 @@ class ViewController: UIViewController , CalculatorDelegate
                         size = 16
                     }
                 }
-                
-                
-                
+ 
             }
         }
  
-        
-        
         displayLabel.font = displayLabel.font.withSize(CGFloat(size))
         displayLabel.text = input
     }
@@ -79,23 +73,19 @@ class ViewController: UIViewController , CalculatorDelegate
     let bgColorsDarker = [ UIColor(red: 170.0/255.0, green: 225.0/255.0, blue: 240.0/255.0, alpha: 1.0 ) , UIColor(red: 235.0/255.0, green: 185.0/255.0, blue: 225.0/255.0, alpha: 1.0) , UIColor(red: 200.0/255.0, green: 185.0/255.0, blue: 235.0/255.0, alpha: 1.0 ) ]
     let bgColors = [ UIColor(red: 185.0/255.0, green: 240.0/255.0, blue: 255.0/255.0, alpha: 1.0 ) , UIColor(red: 255.0/255.0, green: 200.0/255.0, blue: 245.0/255.0, alpha: 1.0) , UIColor(red: 215.0/255.0, green: 200.0/255.0, blue: 255.0/255.0, alpha: 1.0) ]
     let textColors = [ UIColor(red: 0.0/255.0, green: 122.0/255.0, blue: 255.0/255.0, alpha: 1.0) , UIColor(red: 0.0/255.0, green: 185.0/255.0, blue: 255.0/255.0, alpha: 1.0) , UIColor(red:250.0/255.0, green:255.0/255.0, blue:0.0/255.0, alpha:1.0 )]
-    @IBAction func pressedColorButton(_ sender: UIButton)
-    {
+    @IBAction func pressedColorButton(_ sender: UIButton) {
         speaker.playKeyClick()
         currentColor += 1
-        if( currentColor == bgColors.count )
-        {
+        if( currentColor == bgColors.count ){
             currentColor = 0
         }
         // update colors
-        for btn in allNumberButons
-        {
+        for btn in allNumberButons {
             btn.backgroundColor = bgColors[currentColor]
             btn.setTitleColor(textColors[currentColor], for: .normal)
         }
         
-        for btn in allOperationButons
-        {
+        for btn in allOperationButons {
             btn.backgroundColor = bgColorsDarker[currentColor]
             btn.setTitleColor(textColors[currentColor], for: .normal)
         }
@@ -103,17 +93,13 @@ class ViewController: UIViewController , CalculatorDelegate
     }
     
     
-    @IBAction func pressedOperatorButton(_ sender: UIButton)
-    {
+    @IBAction func pressedOperatorButton(_ sender: UIButton){
         speaker.Say(content: sender.accessibilityLabel! , stop: true)
         calculator.operationPressed(tag: sender.tag)
     }
     
-    @IBAction func pressed(_ sender: UIButton)
-    {
+    @IBAction func pressed(_ sender: UIButton) {
         let text = sender.currentTitle!
-    //    print("pressed: " + text)
-    //    speaker.Say(content: text)
         calculator.numberPressed(num: Int(text)!)
     }
     
@@ -127,16 +113,11 @@ class ViewController: UIViewController , CalculatorDelegate
     
    
     
-    func display(input : String)
-    {
-    //    print("display " + input)
+    func display(input : String) {
         displayLabel.text = input
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+
 
 
 }

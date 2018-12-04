@@ -15,6 +15,7 @@
 		099A355F211C73D90084F5F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 099A355D211C73D90084F5F4 /* LaunchScreen.storyboard */; };
 		09B7ECAE211DFE5E00BA7383 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7ECAD211DFE5E00BA7383 /* Calculator.swift */; };
 		09B7ECB0211DFEB900BA7383 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7ECAF211DFEB900BA7383 /* Speaker.swift */; };
+		09BB80D021B6DC80001B2831 /* Voices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB80CF21B6DC80001B2831 /* Voices.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		099A3560211C73D90084F5F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09B7ECAD211DFE5E00BA7383 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		09B7ECAF211DFEB900BA7383 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
+		09BB80CF21B6DC80001B2831 /* Voices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		099A3567211C73F00084F5F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				09BB80CF21B6DC80001B2831 /* Voices.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09BB80D021B6DC80001B2831 /* Voices.swift in Sources */,
 				099A3557211C73D70084F5F4 /* ViewController.swift in Sources */,
 				099A3555211C73D70084F5F4 /* AppDelegate.swift in Sources */,
 				09B7ECAE211DFE5E00BA7383 /* Calculator.swift in Sources */,

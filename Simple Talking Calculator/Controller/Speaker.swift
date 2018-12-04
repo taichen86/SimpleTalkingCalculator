@@ -15,6 +15,7 @@ class Speaker
     var utterance : AVSpeechUtterance
     let synthesizer : AVSpeechSynthesizer
     var voicesAvailable = [AVSpeechSynthesisVoice]()
+    var allVoices = [String : [AVSpeechSynthesisVoice]]()
     
     var currentVoice = 0
     
@@ -27,25 +28,43 @@ class Speaker
             print(voice.name)
             print(voice.identifier)
             print(voice.language)
-            */
+ */
+            
+            let language = String(voice.language.prefix(2))
+     //       print("language \(language)")
+            if allVoices[language] == nil
+            {
+                allVoices[language] = [AVSpeechSynthesisVoice]()
+            }
+            allVoices[language]?.append(voice)
+
+
             if( voice.language.hasPrefix("en-"))
             {
-                /*
                  print(voice.name)
                  print(voice.identifier)
                  print(voice.language)
-                 */
- 
                 voicesAvailable.append(voice)
             }
+     
+
 
         }
+        print("==========")
+        for entry in allVoices {
+            print("language \(entry.key)")
+            print("---- voices ----- ")
+            print(entry.value)
+        }
+        
   //      print("num of voices added \(voicesAvailable.count)" )
         utterance = AVSpeechUtterance(string: "Hello")
         utterance.voice = AVSpeechSynthesisVoice(identifier: voicesAvailable[currentVoice].identifier)
         synthesizer = AVSpeechSynthesizer()
         synthesizer.speak(utterance)
     }
+    
+
     
     func changeVoice()
     {
