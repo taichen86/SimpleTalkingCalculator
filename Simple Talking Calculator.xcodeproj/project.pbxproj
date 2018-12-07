@@ -16,6 +16,7 @@
 		09B7ECAE211DFE5E00BA7383 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7ECAD211DFE5E00BA7383 /* Calculator.swift */; };
 		09B7ECB0211DFEB900BA7383 /* Speaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7ECAF211DFEB900BA7383 /* Speaker.swift */; };
 		09BB80D021B6DC80001B2831 /* Voices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09BB80CF21B6DC80001B2831 /* Voices.swift */; };
+		09C14E4D21B96727001AA479 /* Translations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09C14E4C21B96727001AA479 /* Translations.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		09B7ECAD211DFE5E00BA7383 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		09B7ECAF211DFEB900BA7383 /* Speaker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speaker.swift; sourceTree = "<group>"; };
 		09BB80CF21B6DC80001B2831 /* Voices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voices.swift; sourceTree = "<group>"; };
+		09C14E4C21B96727001AA479 /* Translations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translations.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				09BB80CF21B6DC80001B2831 /* Voices.swift */,
+				09C14E4C21B96727001AA479 /* Translations.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09BB80D021B6DC80001B2831 /* Voices.swift in Sources */,
+				09C14E4D21B96727001AA479 /* Translations.swift in Sources */,
 				099A3557211C73D70084F5F4 /* ViewController.swift in Sources */,
 				099A3555211C73D70084F5F4 /* AppDelegate.swift in Sources */,
 				09B7ECAE211DFE5E00BA7383 /* Calculator.swift in Sources */,
@@ -261,7 +265,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -315,7 +319,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

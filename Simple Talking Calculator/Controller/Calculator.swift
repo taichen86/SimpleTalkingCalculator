@@ -194,7 +194,8 @@ class Calculator
             case Operation.divide:
                 result = numbers[0] / numbers[1]
             default:
-                print("equals")
+           //     print("equals")
+                break
             }
         //    print("RESULT " + String(result) )
 

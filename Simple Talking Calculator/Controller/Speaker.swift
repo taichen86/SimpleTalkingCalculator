@@ -12,11 +12,12 @@ import AVFoundation
 class Speaker
 {
     
-    var utterance : AVSpeechUtterance
-    let synthesizer : AVSpeechSynthesizer
+    var utterance = AVSpeechUtterance()
+    let synthesizer = AVSpeechSynthesizer()
     var voicesAvailable = [AVSpeechSynthesisVoice]()
     var allVoices = [String : [AVSpeechSynthesisVoice]]()
     
+    var currentLanguage = "en" // set to english
     var currentVoice = 0
     
     init()
@@ -24,57 +25,58 @@ class Speaker
     //    print("init speaker")
         for voice in AVSpeechSynthesisVoice.speechVoices()
         {
+
             /*
             print(voice.name)
             print(voice.identifier)
             print(voice.language)
  */
-            
+ 
             let language = String(voice.language.prefix(2))
      //       print("language \(language)")
+            
             if allVoices[language] == nil
             {
                 allVoices[language] = [AVSpeechSynthesisVoice]()
             }
             allVoices[language]?.append(voice)
 
-
-            if( voice.language.hasPrefix("en-"))
-            {
-                 print(voice.name)
-                 print(voice.identifier)
-                 print(voice.language)
-                voicesAvailable.append(voice)
-            }
-     
-
-
         }
-        print("==========")
-        for entry in allVoices {
-            print("language \(entry.key)")
-            print("---- voices ----- ")
-            print(entry.value)
-        }
-        
-  //      print("num of voices added \(voicesAvailable.count)" )
-        utterance = AVSpeechUtterance(string: "Hello")
-        utterance.voice = AVSpeechSynthesisVoice(identifier: voicesAvailable[currentVoice].identifier)
-        synthesizer = AVSpeechSynthesizer()
-        synthesizer.speak(utterance)
+
     }
     
+    var volume : Float = 1.0
+    func setVolume(_ targetVolume:Float)
+    {
+        volume = targetVolume
+    }
 
+    func setPreviousVoice()
+    {
+        if let previousLanguage = UserDefaults.standard.string(forKey: "language"){
+            if allVoices[previousLanguage] != nil {
+                currentLanguage = previousLanguage
+            }
+        }
+        
+        let previousVoice = UserDefaults.standard.integer(forKey: "voice")
+        if previousVoice < (allVoices[currentLanguage]?.count)! {
+            currentVoice = previousVoice
+       //     print("restore previous voice \(currentVoice)")
+        }
+
+        
+    }
     
     func changeVoice()
     {
         currentVoice += 1
-        if( currentVoice == voicesAvailable.count )
-        {
+        if( currentVoice == allVoices[currentLanguage]?.count ){
             currentVoice = 0
         }
-     //   print("voice number " + String(currentVoice))
+        UserDefaults.standard.set(currentVoice, forKey: "voice")
         playKeyClick()
+        Say(content: Translations.words["hello"]?[currentLanguage] ?? "")
     }
     
     func playKeyClick()
@@ -87,15 +89,12 @@ class Speaker
     {
         synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
     }
-    func Say(content:String , stop:Bool)
+    
+    func Say(content:String)
     {
-     //   print("say: " + content)
-        if( stop )
-        {
-            synthesizer.stopSpeaking(at: AVSpeechBoundary.immediate)
-        }
         utterance = AVSpeechUtterance(string: content)
-        utterance.voice = AVSpeechSynthesisVoice(identifier: voicesAvailable[currentVoice].identifier)
+        utterance.voice = AVSpeechSynthesisVoice(identifier: allVoices[currentLanguage]![currentVoice].identifier)
+        utterance.volume = volume
         synthesizer.speak(utterance)
     }
 }
